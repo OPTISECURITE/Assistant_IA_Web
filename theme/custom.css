@@ -369,3 +369,8 @@ html.dark #auth-login-card button[type="submit"] {
 html.dark #logo {
   filter: brightness(0) invert(1) !important;
 }
+
+/* ===== Sidebar : marge en haut pour aérer ===== */
+div[id="sidebar"] > div {
+  padding-top: 1.5rem !important;
+}
