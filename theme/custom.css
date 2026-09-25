@@ -25,21 +25,26 @@ button.bg-black:hover {
   background-color: var(--op-blue-hover) !important;
 }
 
-/* --- Bouton "Nouvelle conversation" en bleu plein (façon maquette) --- */
+/* --- Bouton "Nouvelle conversation" en bleu plein, sur une seule ligne --- */
 #sidebar-new-chat-button {
   background-color: var(--op-blue) !important;
   color: #ffffff !important;
-  border-radius: 30px !important;
-  margin: 4px 2px !important;
+  border-radius: 10px !important;
+  margin: 2px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
 }
 #sidebar-new-chat-button:hover {
   background-color: var(--op-blue-hover) !important;
   color: #ffffff !important;
 }
 #sidebar-new-chat-button svg,
-#sidebar-new-chat-button .text-gray-400,
 #sidebar-new-chat-button span {
   color: #ffffff !important;
+}
+/* Masquer le raccourci clavier qui pousse le texte à la ligne */
+#sidebar-new-chat-button .hover-reveal {
+  display: none !important;
 }
 html.dark #sidebar-new-chat-button {
   color: #102b3d !important;
@@ -64,24 +69,15 @@ html.dark #sidebar-new-chat-button span {
 }
 
 /* --- Espacement des rubriques de la sidebar --- */
-#sidebar-new-chat-button,
-#sidebar-search-button,
-#sidebar-notes-button,
-#sidebar-workspace-button {
-  padding-top: 0.6rem !important;
-  padding-bottom: 0.6rem !important;
-}
-#sidebar-new-chat-button > *,
 #sidebar-search-button,
 #sidebar-notes-button,
 #sidebar-workspace-button {
   margin-top: 2px !important;
   margin-bottom: 2px !important;
 }
-/* Espace entre les conversations de la liste */
 #sidebar-chat-item {
-  padding-top: 0.45rem !important;
-  padding-bottom: 0.45rem !important;
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
 }
 
 /* --- Logos Opti en blanc sur le thème sombre --- */

@@ -8,9 +8,9 @@ if [ -f .env ]; then
         -c --cipher-algo AES256 -o env.gpg .env
 fi
 
-# 2. Données Open WebUI (conversations, comptes) chiffrées
+# 2. Données Open WebUI (conversations, comptes) chiffrées — sans le cache
 if [ -d data ]; then
-    tar czf - data 2>/dev/null | \
+    tar czf - --exclude='data/cache' --exclude='data/vector_db' data 2>/dev/null | \
         gpg --batch --yes --passphrase-file /root/.backup_passphrase \
             -c --cipher-algo AES256 -o data.tar.gz.gpg
 fi
