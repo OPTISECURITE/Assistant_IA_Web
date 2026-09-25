@@ -12,6 +12,20 @@ html.dark {
   --op-blue-hover: #a0d7ef;
 }
 
+/* ===== MODE SOMBRE : fond bleu nuit (maquette) ===== */
+/* Fond général : le div dans .app */
+html.dark .app > div {
+  background-color: #10202e !important;
+}
+/* Sidebar (porte bg-gray-950) */
+html.dark [aria-label="Chat history"] {
+  background-color: #152b3c !important;
+}
+/* Zone de chat */
+html.dark #chat-container {
+  background-color: #10202e !important;
+}
+
 html, body, * {
   font-family: 'Montserrat', -apple-system, sans-serif !important;
 }
@@ -25,7 +39,6 @@ button.bg-black:hover {
   background-color: var(--op-blue-hover) !important;
 }
 
-/* --- Bouton "Nouvelle conversation" en bleu plein, sur une seule ligne --- */
 #sidebar-new-chat-button {
   background-color: var(--op-blue) !important;
   color: #ffffff !important;
@@ -42,7 +55,6 @@ button.bg-black:hover {
 #sidebar-new-chat-button span {
   color: #ffffff !important;
 }
-/* Masquer le raccourci clavier qui pousse le texte à la ligne */
 #sidebar-new-chat-button .hover-reveal {
   display: none !important;
 }
@@ -54,12 +66,11 @@ html.dark #sidebar-new-chat-button span {
   color: #102b3d !important;
 }
 
-/* --- Barre latérale : bleu Opti au survol (autres entrées) --- */
 #sidebar-search-button:hover,
 #sidebar-notes-button:hover,
 #sidebar-workspace-button:hover,
 #sidebar-chat-item:hover {
-  background-color: color-mix(in srgb, var(--op-blue) 8%, transparent) !important;
+  background-color: color-mix(in srgb, var(--op-blue) 12%, transparent) !important;
   color: var(--op-blue) !important;
 }
 #sidebar-search-button:hover svg,
@@ -68,7 +79,6 @@ html.dark #sidebar-new-chat-button span {
   color: var(--op-blue) !important;
 }
 
-/* --- Espacement des rubriques de la sidebar --- */
 #sidebar-search-button,
 #sidebar-notes-button,
 #sidebar-workspace-button {
@@ -80,31 +90,30 @@ html.dark #sidebar-new-chat-button span {
   padding-bottom: 0.4rem !important;
 }
 
-/* --- Logos Opti en blanc sur le thème sombre --- */
 html.dark .sidebar-new-chat-icon,
 html.dark img[src*="/models/model/profile/image"],
 html.dark img[src*="favicon"] {
   filter: brightness(0) invert(1);
 }
 
-/* --- Zone de saisie (composer) façon maquette --- */
 #message-input-container {
   border-radius: 16px !important;
   border: 1px solid color-mix(in srgb, var(--op-blue) 30%, transparent) !important;
   box-shadow: 0 7px 24px rgba(27, 84, 117, 0.10) !important;
   transition: border-color .16s, box-shadow .16s !important;
 }
+html.dark #message-input-container {
+  background-color: #152b3c !important;
+}
 #message-input-container:focus-within {
   border-color: var(--op-blue) !important;
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--op-blue) 12%, transparent) !important;
 }
 
-/* --- Écran de connexion : titre en bleu Opti --- */
 #auth-login-card .text-2xl {
   color: var(--op-blue) !important;
 }
 
-/* --- Décor de vagues concentriques, coin haut droit (façon maquette) --- */
 #chat-container {
   position: relative;
 }
@@ -131,3 +140,23 @@ html.dark img[src*="favicon"] {
   height: 470px;
   border: 22px solid color-mix(in srgb, var(--op-blue) 7%, transparent);
 }
+
+/* ===== Palette sombre maquette : forcer tous les gris ===== */
+html.dark {
+  --color-gray-50:  #e9f1f7 !important;
+  --color-gray-100: #d5e0ea !important;
+  --color-gray-200: #a3b3c0 !important;
+  --color-gray-300: #7a8c99 !important;
+  --color-gray-400: #617483 !important;
+  --color-gray-500: #4a5d6e !important;
+  --color-gray-600: #2c4557 !important;
+  --color-gray-700: #223a4b !important;
+  --color-gray-800: #1d384b !important;
+  --color-gray-850: #152b3c !important;
+  --color-gray-900: #10202e !important;
+  --color-gray-950: #152b3c !important;
+}
+
+/* TEST sidebar */
+html.dark div[id="sidebar"] { background-color: #152b3c !important; }
+html.dark div[id="sidebar"] > div { background-color: #152b3c !important; }
