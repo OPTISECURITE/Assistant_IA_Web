@@ -1,0 +1,19 @@
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: unless-stopped
+    network_mode: host
+    env_file: .env
+    environment:
+      - HOST=172.16.8.2
+      - PORT=3000
+      - OLLAMA_BASE_URL=http://127.0.0.1:11434
+      - WEBUI_NAME=Assistant Opti Sécurité
+      - DEFAULT_USER_ROLE=pending
+    volumes:
+      - /opt/open-webui/data:/app/backend/data
+      - /opt/open-webui/theme/custom.css:/app/backend/open_webui/static/custom.css:ro
+      - /opt/open-webui/theme/splash.png:/app/backend/open_webui/static/splash.png:ro
+      - /opt/open-webui/theme/splash.png:/app/backend/open_webui/static/splash-dark.png:ro
+      - /opt/open-webui/theme/favicon.png:/app/backend/open_webui/static/favicon.png:ro

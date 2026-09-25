@@ -1,0 +1,137 @@
+/* --- Thème Opti Sécurité pour Open WebUI --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --op-blue: #1070aa;
+  --op-blue-hover: #095b8d;
+  --op-cyan: #26a8cc;
+}
+
+html.dark {
+  --op-blue: #72bedf;
+  --op-blue-hover: #a0d7ef;
+}
+
+html, body, * {
+  font-family: 'Montserrat', -apple-system, sans-serif !important;
+}
+
+button.bg-black,
+button[type="submit"].bg-black,
+.bg-black:not(.text-black) {
+  background-color: var(--op-blue) !important;
+}
+button.bg-black:hover {
+  background-color: var(--op-blue-hover) !important;
+}
+
+/* --- Bouton "Nouvelle conversation" en bleu plein (façon maquette) --- */
+#sidebar-new-chat-button {
+  background-color: var(--op-blue) !important;
+  color: #ffffff !important;
+  border-radius: 30px !important;
+  margin: 4px 2px !important;
+}
+#sidebar-new-chat-button:hover {
+  background-color: var(--op-blue-hover) !important;
+  color: #ffffff !important;
+}
+#sidebar-new-chat-button svg,
+#sidebar-new-chat-button .text-gray-400,
+#sidebar-new-chat-button span {
+  color: #ffffff !important;
+}
+html.dark #sidebar-new-chat-button {
+  color: #102b3d !important;
+}
+html.dark #sidebar-new-chat-button svg,
+html.dark #sidebar-new-chat-button span {
+  color: #102b3d !important;
+}
+
+/* --- Barre latérale : bleu Opti au survol (autres entrées) --- */
+#sidebar-search-button:hover,
+#sidebar-notes-button:hover,
+#sidebar-workspace-button:hover,
+#sidebar-chat-item:hover {
+  background-color: color-mix(in srgb, var(--op-blue) 8%, transparent) !important;
+  color: var(--op-blue) !important;
+}
+#sidebar-search-button:hover svg,
+#sidebar-notes-button:hover svg,
+#sidebar-workspace-button:hover svg {
+  color: var(--op-blue) !important;
+}
+
+/* --- Espacement des rubriques de la sidebar --- */
+#sidebar-new-chat-button,
+#sidebar-search-button,
+#sidebar-notes-button,
+#sidebar-workspace-button {
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
+}
+#sidebar-new-chat-button > *,
+#sidebar-search-button,
+#sidebar-notes-button,
+#sidebar-workspace-button {
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+}
+/* Espace entre les conversations de la liste */
+#sidebar-chat-item {
+  padding-top: 0.45rem !important;
+  padding-bottom: 0.45rem !important;
+}
+
+/* --- Logos Opti en blanc sur le thème sombre --- */
+html.dark .sidebar-new-chat-icon,
+html.dark img[src*="/models/model/profile/image"],
+html.dark img[src*="favicon"] {
+  filter: brightness(0) invert(1);
+}
+
+/* --- Zone de saisie (composer) façon maquette --- */
+#message-input-container {
+  border-radius: 16px !important;
+  border: 1px solid color-mix(in srgb, var(--op-blue) 30%, transparent) !important;
+  box-shadow: 0 7px 24px rgba(27, 84, 117, 0.10) !important;
+  transition: border-color .16s, box-shadow .16s !important;
+}
+#message-input-container:focus-within {
+  border-color: var(--op-blue) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--op-blue) 12%, transparent) !important;
+}
+
+/* --- Écran de connexion : titre en bleu Opti --- */
+#auth-login-card .text-2xl {
+  color: var(--op-blue) !important;
+}
+
+/* --- Décor de vagues concentriques, coin haut droit (façon maquette) --- */
+#chat-container {
+  position: relative;
+}
+#chat-container::before,
+#chat-container::after {
+  content: "";
+  position: absolute;
+  top: -360px;
+  right: -260px;
+  width: 560px;
+  height: 600px;
+  transform: rotate(-28deg);
+  border-radius: 48%;
+  pointer-events: none;
+  z-index: 0;
+}
+#chat-container::before {
+  border: 29px solid color-mix(in srgb, var(--op-cyan) 6%, transparent);
+}
+#chat-container::after {
+  top: -295px;
+  right: -195px;
+  width: 430px;
+  height: 470px;
+  border: 22px solid color-mix(in srgb, var(--op-blue) 7%, transparent);
+}
