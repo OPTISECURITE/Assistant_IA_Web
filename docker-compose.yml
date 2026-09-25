@@ -17,3 +17,4 @@ services:
       - /opt/open-webui/theme/splash.png:/app/backend/open_webui/static/splash.png:ro
       - /opt/open-webui/theme/splash.png:/app/backend/open_webui/static/splash-dark.png:ro
       - /opt/open-webui/theme/favicon.png:/app/backend/open_webui/static/favicon.png:ro
+      - /opt/open-webui/theme/logo_9f7530b1.png:/app/backend/open_webui/static/logo-opti.png:ro

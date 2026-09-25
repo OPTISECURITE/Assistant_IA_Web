@@ -160,3 +160,212 @@ html.dark {
 /* TEST sidebar */
 html.dark div[id="sidebar"] { background-color: #152b3c !important; }
 html.dark div[id="sidebar"] > div { background-color: #152b3c !important; }
+
+/* ===== Sidebar : texte plus clair et aéré (maquette) ===== */
+/* Texte des entrées de navigation */
+html.dark #sidebar-search-button,
+html.dark #sidebar-notes-button,
+html.dark #sidebar-workspace-button,
+html.dark #sidebar-search-button div,
+html.dark #sidebar-notes-button div,
+html.dark #sidebar-workspace-button div {
+  color: #cdd9e3 !important;
+}
+/* Titres de conversations */
+html.dark #sidebar-chat-item,
+html.dark #sidebar-chat-item div {
+  color: #a3b3c0 !important;
+}
+/* En-têtes de section (Dossiers, Conversations, Aujourd'hui...) */
+html.dark div[id="sidebar"] .text-gray-400,
+html.dark div[id="sidebar"] .text-gray-500 {
+  color: #7a8c99 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Aération : plus d'espace entre les entrées */
+html div[id="sidebar"] #sidebar-search-button,
+html div[id="sidebar"] #sidebar-notes-button,
+html div[id="sidebar"] #sidebar-workspace-button {
+  padding-top: 0.55rem !important;
+  padding-bottom: 0.55rem !important;
+}
+html div[id="sidebar"] #sidebar-chat-item {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* ===== Logo Opti Sécurité complet en haut de la sidebar ===== */
+/* Masquer le petit losange et le texte du nom */
+html div[id="sidebar"] .sidebar-new-chat-icon {
+  display: none !important;
+}
+html #sidebar-webui-name {
+  font-size: 0 !important;
+}
+/* Afficher le logo horizontal à la place */
+html #sidebar-webui-name::before {
+  content: "" !important;
+  display: block !important;
+  width: 150px !important;
+  height: 44px !important;
+  background: url("/static/logo-opti.png") left center / contain no-repeat !important;
+}
+/* En sombre, le logo bleu foncé passe en blanc */
+html.dark #sidebar-webui-name::before {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* ===== Troisième vague (façon maquette, 3 cercles concentriques) ===== */
+#chat-pane {
+  position: relative;
+}
+#chat-pane::before {
+  content: "";
+  position: absolute;
+  top: -230px;
+  right: -135px;
+  width: 320px;
+  height: 360px;
+  transform: rotate(-28deg);
+  border-radius: 48%;
+  border: 18px solid color-mix(in srgb, var(--op-blue) 8%, transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== Fenêtre des paramètres : plus d'air sur les bords ===== */
+.modal .flex-1.min-w-0.min-h-0.p-4 {
+  padding: 1.75rem 2rem !important;
+}
+#settings-tabs-container {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+/* ===== Menu de gauche de la modale : décoller du bord gauche ===== */
+#settings-tabs-container {
+  padding-left: 0.75rem !important;
+  padding-right: 0.5rem !important;
+}
+#settings-tabs-container .tabs {
+  padding-left: 0.25rem !important;
+}
+/* Onglets et titres de section : un peu d'air à gauche */
+#settings-tabs-container button[role="tab"],
+#settings-tabs-container span {
+  padding-left: 0.5rem !important;
+}
+
+/* ===== Menu de gauche de la modale : décoller du bas ===== */
+#settings-tabs-container .tabs {
+  padding-bottom: 1.5rem !important;
+}
+
+/* ===== Menu de gauche modale : espace en bas (v2) ===== */
+nav#settings-tabs-container {
+  padding-bottom: 1.5rem !important;
+}
+nav#settings-tabs-container > div[class*="tabs"] {
+  padding-bottom: 1.5rem !important;
+}
+
+/* ===== Modale paramètres : texte lisible en sombre (façon maquette) ===== */
+/* Titres de section et labels */
+html.dark .modal h2,
+html.dark .modal h3 {
+  color: #e9f1f7 !important;
+}
+html.dark .modal .text-gray-600,
+html.dark .modal .text-gray-700 {
+  color: #cdd9e3 !important;
+}
+/* Descriptions (le gris très foncé) */
+html.dark .modal .text-gray-400,
+html.dark .modal [class*="text-gray-600"] {
+  color: #a3b3c0 !important;
+}
+/* Onglets du menu de gauche */
+html.dark #settings-tabs-container button[role="tab"] {
+  color: #cdd9e3 !important;
+}
+html.dark #settings-tabs-container button[role="tab"][aria-selected="true"] {
+  color: #ffffff !important;
+}
+
+/* ===== Page de connexion aux couleurs Opti (clair + sombre système) ===== */
+/* Fond général */
+#auth-page > .bg-white.dark\:bg-black,
+#auth-page .absolute.bg-white {
+  background-color: #f5f8fa !important;
+}
+html.dark #auth-page > div[class*="bg-white"] {
+  background-color: #10202e !important;
+}
+
+/* Carte du formulaire */
+#auth-login-card {
+  background: #ffffff !important;
+  border: 1px solid color-mix(in srgb, var(--op-blue) 18%, transparent) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 12px 40px rgba(27, 84, 117, 0.12) !important;
+  padding: 32px 28px !important;
+}
+html.dark #auth-login-card {
+  background: #152b3c !important;
+  border-color: #2c4557 !important;
+}
+
+/* Logo Opti au-dessus du formulaire */
+#auth-login-card::before {
+  content: "" !important;
+  display: block !important;
+  height: 46px !important;
+  margin: 0 auto 20px !important;
+  background: url("/static/logo-opti.png") center / contain no-repeat !important;
+}
+html.dark #auth-login-card::before {
+  filter: brightness(0) invert(1) !important;
+}
+
+/* Titre */
+#auth-login-card .text-2xl {
+  color: var(--op-blue) !important;
+  font-weight: 600 !important;
+}
+
+/* Champs */
+#auth-login-card input[type="email"],
+#auth-login-card input[type="password"] {
+  background: #f5f8fa !important;
+  border: 1px solid color-mix(in srgb, var(--op-blue) 20%, #e1eaf0) !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+}
+html.dark #auth-login-card input[type="email"],
+html.dark #auth-login-card input[type="password"] {
+  background: #10202e !important;
+  border-color: #2c4557 !important;
+  color: #e9f1f7 !important;
+}
+#auth-login-card input:focus {
+  border-color: var(--op-blue) !important;
+}
+
+/* Bouton de connexion en bleu Opti plein */
+#auth-login-card button[type="submit"] {
+  background: var(--op-blue) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+#auth-login-card button[type="submit"]:hover {
+  background: var(--op-blue-hover) !important;
+}
+html.dark #auth-login-card button[type="submit"] {
+  color: #102b3d !important;
+}
+
+/* Logo en bas à gauche : blanc en sombre */
+html.dark #logo {
+  filter: brightness(0) invert(1) !important;
+}
